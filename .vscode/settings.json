@@ -6,5 +6,7 @@
     "**/.hg": true,
     "**/.DS_Store": true,
 		"view-slack-darwin-*/": true
-  }
+  },
+
+  "files.trimTrailingWhitespace": true
 }
