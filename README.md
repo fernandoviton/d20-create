@@ -1,10 +1,11 @@
 # d20-create
 
-A tool for creating and managing d20 characters
+An electron app for creating and managing d20 characters
 
 ## Installation
 
 ```bash
+npm install electron -g
 git clone https://github.com/fernandoviton/d20-create.git
 cd d20-create
 npm install
