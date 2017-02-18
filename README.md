@@ -12,6 +12,9 @@ npm install
 npm start
 ```
 
+### Tests
+`npm test` or for continuous `npm test -- --watch`
+
 [ES6]: http://exploringjs.com/
 [React]: https://facebook.github.io/react/
 [Electron]: http://electron.atom.io/
