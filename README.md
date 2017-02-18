@@ -1,6 +1,6 @@
 # d20-create
 
-An electron app for creating and managing d20 characters
+An app for creating and managing d20 characters
 
 ## Installation
 
