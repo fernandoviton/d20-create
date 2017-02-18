@@ -11,7 +11,6 @@ export default class Root extends React.Component {
     var key = 0;
 
     return <div>
-      <button onClick={() => store.dispatch(addToSequence())}>+</button>
       <Skills/>
       <Abilities/>
     </div>

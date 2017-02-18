@@ -9,9 +9,12 @@ export default (state, action) => {
 		case undefined:
 			return defaultState
 
+		case 'INIT':
+			return defaultState
+
 		case 'INCREASE_BALANCE_SKILL':
 			const oldSkill = state.skills.get('balance')
-			const newSkill = {...oldSkill, rank: oldSkill.rank + 1}
+			const newSkill = {...oldSkill, ranks: oldSkill.ranks + 1}
 			return {...state,
 				skills: state.skills.set('balance', newSkill)
 			}
@@ -20,9 +23,9 @@ export default (state, action) => {
 	}
 }
 
-export const createSkill = (rank, abilityMod) => {
+export const createSkill = (ranks, abilityMod) => {
 	return {
-		rank,
+		ranks,
 		abilityMod
 	}
 }
