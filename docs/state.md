@@ -1,5 +1,6 @@
 App state
 - character
+	- name
 	- abilities [map ability name to Ability record]
 	- skills [map skill name to Skill record]
 

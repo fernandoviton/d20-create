@@ -1,4 +1,4 @@
-export const addToSequence = () => ({
-	type: 'ADD_TO_SEQUENCE',
+export const increaseBalanceSkill = () => ({
+	type: 'INCREASE_BALANCE_SKILL',
 })
 
