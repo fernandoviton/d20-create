@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
-    "electron": "^1.4.3",
     "jest-cli": "^18.0.0"
   }
 }
