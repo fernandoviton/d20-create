@@ -1,4 +1,4 @@
-# d20-creat
+# d20-create
 
 A tool for creating and managing d20 characters
 
