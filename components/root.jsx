@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { addToSequence } from '../actions/index.js'
+import Skills from './skills.jsx'
 
 export default class Root extends React.Component {
   render() {
@@ -18,6 +19,7 @@ export default class Root extends React.Component {
         })
       }
       </div>
+      <Skills/>
     </div>
   }
 }
