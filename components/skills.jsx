@@ -8,11 +8,9 @@ import { changeSkillRank } from '../actions/index'
 export default class Skills extends React.Component {
     render() {
         const { store } = this.context;
-        const skill = store.getState().character.skills.get('balance');
-        const ranks = skill === undefined ? 0 : skill.ranks
-        const skill1 = {skillName:'Balance', crossClass:null, total:5, ranks:ranks};
-        const skill2 = {skillName:'Bluff', crossClass:4, total:null, ranks:8};
-
+        const skillElements = store.getState().character.skills.map((skill, skillName) => {
+            return <Skill key={skillName} value={{skillName: skillName, crossClass:null, total: 0, ranks:skill.ranks }}/>
+        }).toArray()
 
         return <div>
             <Button bsStyle="primary" className='skillbutton' onClick={() => store.dispatch(changeSkillRank('balance', 1))}>Skill Button</Button>
@@ -27,8 +25,7 @@ export default class Skills extends React.Component {
                 </tr>
                 </thead>
                 <tbody>
-                    <Skill value={skill1}/>
-                    <Skill value={skill2}/>
+                    {skillElements}
                 </tbody>
             </Table>
         </div>
