@@ -6,6 +6,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reduxLogger from './middleware/reduxLogger'
 
+import { changeSkillRank } from './actions/index'
+
 const store = createStore(root, applyMiddleware(reduxLogger))
 store.dispatch({type:'INIT'})
 console.log('created store', store.getState())
@@ -19,5 +21,8 @@ store.subscribe(render)
 
 window.onload = function()
 {
+  store.dispatch(changeSkillRank('balance', 0))
+  store.dispatch(changeSkillRank('climb', 0))
+
   render()
 }

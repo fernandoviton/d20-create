@@ -13,11 +13,10 @@ export default class Skills extends React.Component {
         }).toArray()
 
         return <div>
-            <Button bsStyle="primary" className='skillbutton' onClick={() => store.dispatch(changeSkillRank('balance', 1))}>Skill Button</Button>
-
             <Table striped bordered condensed hover>
                 <thead>
                 <tr>
+                    <th>Add</th>
                     <th>Skill Name</th>
                     <th>Cross Class</th>
                     <th>Total</th>
