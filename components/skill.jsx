@@ -8,12 +8,14 @@ export default class Skill extends React.Component {
         const { store } = this.context;
 
         return <tr>
-            <td><Button bsStyle="primary" className='skillbutton' onClick={() => store.dispatch(changeSkillRank(this.props.value.skillName, 1))}>+</Button>
-            </td>
             <td>{this.props.value.skillName}</td>
             <td>{this.props.value.crossClass}</td>
             <td>{this.props.value.total}</td>
             <td>{this.props.value.ranks}</td>
+            <td>
+                <Button bsStyle="primary" bsSize="xsmall" onClick={() => store.dispatch(changeSkillRank(this.props.value.skillName, 1))}>+</Button>
+                <Button bsStyle="primary" bsSize="xsmall" style={{marginLeft: 5}} onClick={() => store.dispatch(changeSkillRank(this.props.value.skillName, -1))}>-</Button>
+            </td>
         </tr>
     }
 }

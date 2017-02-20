@@ -16,11 +16,11 @@ export default class Skills extends React.Component {
             <Table striped bordered condensed hover>
                 <thead>
                 <tr>
-                    <th>Add</th>
                     <th>Skill Name</th>
                     <th>Cross Class</th>
                     <th>Total</th>
                     <th>Ranks</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
