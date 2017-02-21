@@ -10,12 +10,10 @@ export default (state = Immutable.Map(), action) => {
 	return state
 }
 
-export const createSkill = (ranks, abilityMod = 0) => {
-	return {
+export const createSkill = (ranks, abilityMod = 0) => ({
 		ranks,
 		abilityMod
-	}
-}
+})
 
 const ensureSkill = (skill = {
 		ranks: 0,

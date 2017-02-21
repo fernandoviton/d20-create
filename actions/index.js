@@ -3,3 +3,9 @@ export const changeSkillRank = (name, changeAmount) => ({
 	name,
 	changeAmount
 })
+
+export const changeAbility = (name, changeAmount) => ({
+	type: 'CHANGE_ABILITY',
+	name,
+	changeAmount
+})
