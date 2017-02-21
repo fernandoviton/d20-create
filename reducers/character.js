@@ -6,6 +6,7 @@ import skills from '../reducers/skills'
 export default (state = defaultState, action) => {
 
 	state = {...state, skills: skills(state.skills, action)}
+	state = {...state, abilities: abilities(state.abilities, action)}
 
 	switch (action.type) {
 		default:
@@ -14,6 +15,5 @@ export default (state = defaultState, action) => {
 }
 
 const defaultState = {
-	name: undefined,
-	abilities: new Map(),
+	name: undefined
 }
