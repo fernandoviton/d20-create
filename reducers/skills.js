@@ -4,8 +4,10 @@ export default (state = Immutable.Map(), action) => {
 	switch (action.type) {
 		case 'CHANGE_SKILL_RANK':
 			const oldSkill = ensureSkill(state.get(action.name))
-			const newSkill = {...oldSkill, ranks: oldSkill.ranks + action.changeAmount}
-			return state.set(action.name, newSkill)
+			if (oldSkill.ranks + action.changeAmount >= 0) {
+				const newSkill = {...oldSkill, ranks: oldSkill.ranks + action.changeAmount}
+				return state.set(action.name, newSkill)
+			}
 	}
 	return state
 }
