@@ -22,4 +22,9 @@ describe('changing skill rank', () => {
 		const map = Immutable.Map({'someSkill': createSkill(1)})
 		expect(skills(map, changeSkillRank('anotherSkill', 2)).get('someSkill').ranks).toEqual(1)
 	})
+
+	/*test('do not go below 0', () => {
+		const map = Immutable.Map({'someSkill': createSkill(1)})
+		expect(skills(map, changeSkillRank('anotherSkill', -1)).get('someSkill').ranks).toEqual(1)
+	})*/
 })
