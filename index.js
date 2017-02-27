@@ -27,5 +27,8 @@ window.onload = function()
   store.dispatch(changeAbility('str', 0))
   store.dispatch(changeAbility('dex', 0))
 
+	console.log(JSON.stringify(store.getState()))
+	console.log(JSON.parse(JSON.stringify(store.getState())))
+
 	render()
 }
