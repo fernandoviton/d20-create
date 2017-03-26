@@ -11,7 +11,6 @@ import { changeSkillRank, changeAbility } from './actions/index'
 import abilities from './schema/abilities.json'
 import Immutable from 'immutable'
 
-
 const store = createStore(root, applyMiddleware(reduxLogger))
 store.dispatch({type:'INIT'})
 console.log('created store', store.getState())
