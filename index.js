@@ -5,11 +5,7 @@ import root from './reducers/root';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reduxLogger from './middleware/reduxLogger'
-
-import { changeSkillRank, changeAbility } from './actions/index'
-
-import abilities from './schema/abilities.json'
-import Immutable from 'immutable'
+import loadSchema from './schema/loadSchema'
 
 const store = createStore(root, applyMiddleware(reduxLogger))
 store.dispatch({type:'INIT'})
@@ -24,19 +20,6 @@ store.subscribe(render)
 
 window.onload = function()
 {
-  store.dispatch(changeSkillRank('balance', 0))
-  store.dispatch(changeSkillRank('climb', 0))
-
-	loadAbilities(abilities)
-
-	console.log(JSON.stringify(store.getState()))
-	console.log(JSON.parse(JSON.stringify(store.getState())))
-
+	loadSchema(store)
 	render()
-}
-
-const loadAbilities = (json) => {
-	var map = Immutable.fromJS(json)
-
-	map.map( (v, k) => {store.dispatch(changeAbility(k, 0))})
 }
