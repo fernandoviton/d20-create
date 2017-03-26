@@ -16,5 +16,5 @@ const loadAbilities = (store) => {
 
 const loadSkills = (store) => {
 	var skillsMap = Immutable.fromJS(skills)
-	skillsMap.map( (v, k) => store.dispatch(setSkillAbilityModifier(k, v.ability)) )
+	skillsMap.map( (v, k) => { console.log("Ability: ", v.get('ability')); store.dispatch(setSkillAbilityModifier(k, 0))})
 }

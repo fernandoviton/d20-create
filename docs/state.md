@@ -19,5 +19,5 @@ Skill Names
 
 Skill Record
 - ranks
-- abilityModifier
+- abilityMod
 - total

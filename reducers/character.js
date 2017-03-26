@@ -5,8 +5,8 @@ import skills from '../reducers/skills'
 
 export default (state = defaultState, action) => {
 
-	state = {...state, skills: skills(state.skills, action)}
 	state = {...state, abilities: abilities(state.abilities, action)}
+	state = {...state, skills: skills(state.skills, action)}
 
 	switch (action.type) {
 		default:

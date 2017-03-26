@@ -22,6 +22,12 @@ describe('changing skill rank', () => {
 		const map = Immutable.Map({'someSkill': createSkill(1)})
 		expect(skills(map, changeSkillRank('anotherSkill', 2)).get('someSkill').ranks).toEqual(1)
 	})
+
+	test('changes total', () => {
+		const map = Immutable.Map({'anything': createSkill(1, 2)})
+		expect(skills(map, changeSkillRank('anything', 3)).get('anything').total).toEqual(6)
+		expect(skills(map, changeSkillRank('anything', 1)).get('anything').total).toEqual(4)
+	})
 })
 
 describe('set skill ability modifier', () => {
@@ -39,5 +45,11 @@ describe('set skill ability modifier', () => {
 	test('doesnt affect other skill ability modifiers', () => {
 		const map = Immutable.Map({'someSkill': createSkill(1, 2)})
 		expect(skills(map, setSkillAbilityModifier('anotherSkill', 3)).get('someSkill').abilityMod).toEqual(2)
+	})
+
+	test('changes total', () => {
+		const map = Immutable.Map({'anything': createSkill(1, 2)})
+		expect(skills(map, setSkillAbilityModifier('anything', 3)).get('anything').total).toEqual(4)
+		expect(skills(map, setSkillAbilityModifier('anything', 1)).get('anything').total).toEqual(2)
 	})
 })
