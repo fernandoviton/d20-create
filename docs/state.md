@@ -1,14 +1,15 @@
 App state
 - character
 	- name
-	- abilities [map ability name to Ability record]
-	- skills [map skill name to Skill record]
+	- abilities [Ability records]
+	- skills [map skill name to Skill record] // TODO: change to list
 
 Ability Names
 - 'strength'
 - 'intelligence'
 
 Ability Record
+- name
 - value
 - modifier
 
