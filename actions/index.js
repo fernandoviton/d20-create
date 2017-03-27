@@ -3,9 +3,9 @@ export const changeSkillRank = (name, changeAmount) => ({
 	name,	changeAmount
 })
 
-export const setSkillAbilityModifier = (name, modifier) => ({
-	type: 'SET_SKILL_ABILITY_MODIFIER',
-	name,	modifier
+export const initSkill = (name, abilityModifierName, ranks) => ({
+	type: 'INIT_SKILL',
+	name,	abilityModifierName, ranks
 })
 
 export const changeAbility = (name, changeAmount) => ({

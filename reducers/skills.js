@@ -1,34 +1,36 @@
 import Immutable from 'immutable'
 
-export default (state = Immutable.Map(), action) => {
+export default (state = Immutable.Map(), action, props) => {
 	switch (action.type) {
 		case 'CHANGE_SKILL_RANK':	{
 			const oldSkill = ensureSkill(state.get(action.name))
 			const newSkill = {...oldSkill, ranks: oldSkill.ranks + action.changeAmount}
-			return state.set(action.name, updateTotal(newSkill))
+			return state.set(action.name, updateSkill(newSkill, props.abilities))
 		}
-		case 'SET_SKILL_ABILITY_MODIFIER': {
-			const oldSkill = ensureSkill(state.get(action.name))
-			const newSkill = {...oldSkill, abilityMod: action.modifier}
-			return state.set(action.name, updateTotal(newSkill))
+		case 'INIT_SKILL': {
+			const newSkill = createSkill(action.ranks, action.abilityModifierName)
+			return state.set(action.name, updateSkill(newSkill, props.abilities))
 		}
 	}
 	return state
 }
 
-export const createSkill = (ranks, abilityMod = 0) => ({
+export const createSkill = (ranks, abilityName = '', abilityMod ) => ({
 		ranks,
-		abilityMod
+		abilityName,
+		abilityMod: 0,
+		total: 0
 })
 
 const ensureSkill = (skill = {
 		ranks: 0,
-		abilityMod: 0,
+		total: 0
 	}) => {
 	return skill
 }
 
-const updateTotal = (skill) => {
-	const s = {...skill, total: skill.ranks + skill.abilityMod}
-	return s
+const updateSkill = (skill, abilities) => {
+	const abilityName = skill.abilityName !== undefined ? abilities.get(skill.abilityName) : undefined;
+	const abilityModifier = abilityName !== undefined ? abilityName.value : 0;
+	return {...skill, abilityMod: abilityModifier, total: skill.ranks + abilityModifier}
 }

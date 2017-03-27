@@ -7,8 +7,6 @@ export default (state = Immutable.Map(), action) => {
 			const newAbility = {...oldAbility, value: oldAbility.value + action.changeAmount}
 			return state.set(action.name, newAbility)
 		case 'LOAD_CHARACTER':
-			console.log(action.abilities)
-			console.log(Immutable.Map(action.abilities))
 			return Immutable.Map(action.abilities.map(ability => [ability.name, ability]))
 	}
 	return state

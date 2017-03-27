@@ -2,7 +2,7 @@ import Immutable from 'immutable'
 
 import abilities from './abilities.json'
 import skills from './skills.json'
-import { changeAbility, setSkillAbilityModifier } from '../actions/index'
+import { changeAbility, initSkill } from '../actions/index'
 
 export default (store) => {
 	loadAbilities(store)
@@ -16,5 +16,5 @@ const loadAbilities = (store) => {
 
 const loadSkills = (store) => {
 	var skillsMap = Immutable.fromJS(skills)
-	skillsMap.map( (v, k) => { console.log("Ability: ", v.get('ability')); store.dispatch(setSkillAbilityModifier(k, 0))})
+	skillsMap.map( (v, k) => { console.log("Ability: ", v.get('ability')); store.dispatch(initSkill(k, v.get('ability'), 0))})
 }
